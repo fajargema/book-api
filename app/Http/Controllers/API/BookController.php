@@ -14,7 +14,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::with('user')->paginate(10);
+        $books = Book::with('user')->where('user_id', Auth::id())->paginate(10);
         return JsonApiResponse::success($books);
     }
 
@@ -55,7 +55,7 @@ class BookController extends Controller
 
     public function show(string $id)
     {
-        $book = Book::with('user')->find($id);
+        $book = Book::with('user')->where('user_id', Auth::id())->find($id);
 
         if (!$book) {
             return JsonApiResponse::error("book not found", Response::HTTP_NOT_FOUND);
