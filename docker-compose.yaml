@@ -5,12 +5,12 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - 9000:9000
+      - 8000:8000
     volumes:
       - .:/var/www/html
     environment:
       - DB_HOST=db
-      - DB_PORT=3306
+      - DB_PORT=3307
       - DB_DATABASE=book_api
       - DB_USERNAME=root
       - DB_PASSWORD=password
@@ -19,7 +19,7 @@ services:
   db:
     image: mysql:5.7
     ports:
-      - 3306:3306
+      - 3307:3307
     volumes:
       - mysql-data:/var/lib/mysql
     environment:

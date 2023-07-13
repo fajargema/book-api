@@ -32,7 +32,10 @@ RUN php artisan key:generate
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
 # Expose port
-EXPOSE 9000
+EXPOSE 8000
 
 # Start PHP-FPM
 CMD ["php-fpm"]
+
+# run laravel
+CMD ["php", "artisan", "serve", "--host=0.0.0.0", "--port=8000"]
