@@ -3,7 +3,7 @@
 > A simple Laravel API.
 
 <p align="center">
-<img src="https://imgur.com/hAwM47v">
+<img src="https://i.imgur.com/hAwM47v.png" title="postman" />
 </p>
 
 ## Documentation
